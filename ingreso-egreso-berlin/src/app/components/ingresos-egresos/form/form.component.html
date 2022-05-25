@@ -1,0 +1,116 @@
+<div class="conteinter">
+<mat-dialog-content class="mat-typography">
+  <h2>Nuevo Ingreso</h2>
+  <button class="close" mat-dialog-close>
+    <mat-icon aria-hidden="false"
+      >close</mat-icon
+    >
+  </button>
+  <form class="example-form" #loginForm="ngForm" (ngSubmit)="save()" [formControl]="myControl">
+    <h3>Datos Personales</h3>
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Nombre y apellido </mat-label>
+      <input
+        required
+        type="text"
+        placeholder="Pablo Parma"
+        name='nombre'
+        matInput
+        [(ngModel)]="nuevoIngreso.nombre"
+        [formControl]="myControl"
+        [matAutocomplete]="auto"
+      />
+      <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+        <mat-option
+          *ngFor="let option of filteredOptions | async"
+          [value]="option">
+          {{ option }}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Empresa</mat-label>
+      <input
+        required
+        type="text"
+        placeholder="Berlin"
+        name='empresa'
+        [(ngModel)]="nuevoIngreso.empresa"
+        matInput
+        [formControl]="myControl"
+      />
+    </mat-form-field>
+    <br />
+    <mat-form-field class="example-full-width" appearance="outline">
+      <mat-label>Temperatura</mat-label>
+      <input
+        required
+        min="30"
+        max="45"
+        type="number"
+        placeholder="36.3"
+        name='temperatura'
+        [(ngModel)]="nuevoIngreso.temperatura"
+        matInput
+        [formControl]="myControl"
+      />
+      <span matSuffix>°C</span>
+    </mat-form-field>
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Vehiculo </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Vehiculo</mat-label>
+          <input
+
+            type="text"
+            placeholder="Fiat Duna"
+            name='vehiculo'
+            [(ngModel)]="nuevoIngreso.vehiculo"
+            matInput
+          />
+        </mat-form-field>
+        <br>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Patente</mat-label>
+          <input
+          name="patente"
+            type="text"
+            placeholder="AAC-000"
+            [(ngModel)]="nuevoIngreso.patente"
+            matInput
+          />
+        </mat-form-field>
+      </mat-expansion-panel>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Observaciones </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-form-field class="example-full-width" appearance="outline">
+          <mat-label>Observaciones</mat-label>
+          <textarea
+            placeholder="Observaciones..."
+            name="observaciones"
+            matInput
+            [(ngModel)]="nuevoIngreso.observaciones"
+          ></textarea>
+        </mat-form-field>
+      </mat-expansion-panel>
+
+      <button
+      class="guardar"
+      mat-raised-button
+      type="submit"
+      [disabled]="loginForm.form.invalid"
+    >
+      Guardar
+    </button>
+    </mat-accordion>
+  </form>
+</mat-dialog-content>
+
+
+</div>

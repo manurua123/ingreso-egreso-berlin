@@ -1,0 +1,35 @@
+.conteiner {
+  position: relative;
+  min-width: 50vh;
+}
+
+h2 {
+  float: left;
+  width: 90%;
+}
+textarea {
+  min-height: 100px !important;
+}
+.close {
+  width: 10%;
+  float: right;
+  background-color: transparent;
+  border: none;
+  margin-bottom: 30px;
+}
+.close:hover {
+  color: #fec260;
+}
+h3 {
+  margin-top: 10px;
+  width: 100%;
+}
+.guardar {
+
+  margin: 20px 40%;
+  background-color: #fec260;
+  color: #102027;
+}
+mat-form-field {
+  width: 100%;
+}

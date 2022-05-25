@@ -1,0 +1,38 @@
+th, td {
+  overflow: hidden;
+  width: 200px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+.mat-paginator{
+  width: 100% !important;
+  table-layout: fixed;
+}
+.mat-elevation-z8{
+  width: 100%;
+}
+
+.colum1{
+  width: 7%;
+}
+.colum2{
+  width: 16%;
+}
+
+.colum3{
+  width:19%;
+}
+.export{
+  background-color: #fec260;
+  color: #102027;
+  margin: 0px 20px;
+}
+.navTable{
+  float: right;
+
+
+}
